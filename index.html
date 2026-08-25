@@ -1,19 +1,901 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Muthanna K. Kareem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Muthanna K. Kareem | Academic Website</title>
+
+  <meta name="description"
+        content="Muthanna K. Kareem - Ph.D. Researcher in Mechanical Engineering, Computational Mechanics, Crystal Plasticity, Finite Element Modeling, and Computational Materials Science.">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+      background: #ffffff;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 70px;
+      padding: 0 25px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: 700;
+      color: #172554;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 27px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #374151;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1d4ed8;
+    }
+
+    /* HERO */
+
+    .hero {
+      background:
+        linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%);
+      padding: 110px 25px 100px;
+    }
+
+    .hero-container {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      color: #1d4ed8;
+      background: #dbeafe;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 13px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      line-height: 1.1;
+      color: #111827;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      color: #334155;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      font-size: 17px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      border-radius: 7px;
+      padding: 11px 19px;
+      font-weight: 700;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    .button-primary {
+      background: #1d4ed8;
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #1e40af;
+    }
+
+    .button-secondary {
+      border: 1px solid #cbd5e1;
+      color: #334155;
+      background: white;
+    }
+
+    .button-secondary:hover {
+      border-color: #1d4ed8;
+      color: #1d4ed8;
+    }
+
+    .hero-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+    }
+
+    .hero-card h3 {
+      color: #172554;
+      margin-bottom: 22px;
+      font-size: 21px;
+    }
+
+    .research-tag {
+      display: inline-block;
+      margin: 5px 4px;
+      padding: 7px 11px;
+      background: #eff6ff;
+      color: #1e40af;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    /* GENERAL SECTION */
+
+    section {
+      padding: 85px 25px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 34px;
+      color: #111827;
+      margin-bottom: 12px;
+    }
+
+    .section-line {
+      width: 55px;
+      height: 4px;
+      background: #2563eb;
+      border-radius: 5px;
+      margin-bottom: 35px;
+    }
+
+    .section-intro {
+      font-size: 17px;
+      color: #4b5563;
+      max-width: 900px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #4b5563;
+    }
+
+    .info-card {
+      background: #f8fafc;
+      border-left: 4px solid #2563eb;
+      padding: 25px;
+    }
+
+    .info-card p {
+      margin-bottom: 12px;
+    }
+
+    /* RESEARCH */
+
+    #research {
+      background: #f8fafc;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 35px;
+    }
+
+    .research-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 27px;
+      transition: 0.25s;
+    }
+
+    .research-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.07);
+    }
+
+    .research-card h3 {
+      color: #172554;
+      margin-bottom: 12px;
+      font-size: 19px;
+    }
+
+    .research-card p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    /* EDUCATION */
+
+    .timeline-item {
+      margin-bottom: 32px;
+      border-left: 3px solid #2563eb;
+      padding-left: 22px;
+    }
+
+    .timeline-item h3 {
+      color: #111827;
+      font-size: 20px;
+    }
+
+    .timeline-item h4 {
+      color: #2563eb;
+      font-size: 15px;
+      margin: 5px 0;
+    }
+
+    .timeline-item p {
+      color: #64748b;
+    }
+
+    /* PUBLICATIONS */
+
+    #publications {
+      background: #f8fafc;
+    }
+
+    .publication {
+      padding: 22px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .publication h3 {
+      font-size: 17px;
+      color: #172554;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .publication p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .journal {
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+
+    /* EXPERIENCE */
+
+    .experience-card {
+      margin-bottom: 27px;
+      padding: 28px;
+      border: 1px solid #e5e7eb;
+      border-radius: 9px;
+    }
+
+    .experience-card h3 {
+      color: #172554;
+      font-size: 20px;
+    }
+
+    .experience-card h4 {
+      color: #2563eb;
+      margin-bottom: 10px;
+    }
+
+    .experience-card p {
+      color: #64748b;
+    }
+
+    /* CONTACT */
+
+    #contact {
+      background: #172554;
+      color: white;
+    }
+
+    #contact .section-title {
+      color: white;
+    }
+
+    #contact p {
+      color: #dbeafe;
+    }
+
+    .contact-links {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .contact-links a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 16px;
+      border: 1px solid #64748b;
+      border-radius: 6px;
+    }
+
+    .contact-links a:hover {
+      background: white;
+      color: #172554;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #94a3b8;
+      text-align: center;
+      padding: 25px;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 850px) {
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .nav-container {
+        flex-direction: column;
+        padding: 15px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 13px;
+        margin-top: 10px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 <body>
 
-<h1>Muthanna K. Kareem</h1>
-<h2>Ph.D. Researcher in Mechanical Engineering</h2>
+<!-- NAVIGATION -->
 
-<p>
-Computational Mechanics | Computational Materials Science |
-Crystal Plasticity | Finite Element Modeling
-</p>
+<nav>
+  <div class="nav-container">
 
-<p>University of New Hampshire</p>
+    <div class="logo">Muthanna K. Kareem</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-container">
+
+    <div>
+
+      <span class="hero-label">
+        Computational Mechanics & Materials Research
+      </span>
+
+      <h1>Muthanna K. Kareem</h1>
+
+      <h2>
+        Ph.D. Researcher in Mechanical Engineering
+      </h2>
+
+      <p>
+        My research integrates computational mechanics, finite element modeling,
+        crystal plasticity, image-based modeling, atomistic simulations, and
+        scientific computing to understand the mechanical behavior and
+        structure-property relationships of advanced engineering materials.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="button button-primary"
+           href="#research">
+           Explore My Research
+        </a>
+
+        <a class="button button-secondary"
+           href="https://scholar.google.com/citations?user=R8xlv-8AAAAJ&hl=en"
+           target="_blank">
+           Google Scholar
+        </a>
+
+        <a class="button button-secondary"
+           href="https://www.linkedin.com/in/muthanna-kareem-99867b71/"
+           target="_blank">
+           LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-card">
+
+      <h3>Research Expertise</h3>
+
+      <span class="research-tag">Computational Mechanics</span>
+      <span class="research-tag">Finite Element Analysis</span>
+      <span class="research-tag">Crystal Plasticity</span>
+      <span class="research-tag">CPFEM</span>
+      <span class="research-tag">Image-Based Modeling</span>
+      <span class="research-tag">Representative Volume Elements</span>
+      <span class="research-tag">Computational Homogenization</span>
+      <span class="research-tag">Multiscale Modeling</span>
+      <span class="research-tag">Molecular Dynamics</span>
+      <span class="research-tag">Density Functional Theory</span>
+      <span class="research-tag">Machine Learning</span>
+      <span class="research-tag">μCT</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="container">
+
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <p>
+          I am a Ph.D. researcher in Mechanical Engineering at the
+          University of New Hampshire, with research interests spanning
+          computational mechanics, computational materials science,
+          crystal plasticity, finite element modeling, and multiscale
+          simulation.
+        </p>
+
+        <p>
+          My work focuses on developing predictive computational methods
+          that connect material microstructure with macroscopic mechanical
+          behavior. My research combines continuum mechanics, finite element
+          analysis, image-based modeling, crystal plasticity, atomistic
+          simulations, and computational homogenization.
+        </p>
+
+        <p>
+          I am particularly interested in computational approaches for
+          advanced structural materials, porous materials, biomaterials,
+          and energy-related materials.
+        </p>
+
+      </div>
+
+      <div class="info-card">
+
+        <p><strong>Current Position</strong><br>
+        Ph.D. Researcher</p>
+
+        <p><strong>Institution</strong><br>
+        University of New Hampshire</p>
+
+        <p><strong>Department</strong><br>
+        Mechanical Engineering</p>
+
+        <p><strong>Location</strong><br>
+        New Hampshire, USA</p>
+
+        <p><strong>Research Areas</strong><br>
+        Computational Mechanics, Materials Science,
+        Crystal Plasticity & Finite Element Modeling</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESEARCH -->
+
+<section id="research">
+
+  <div class="container">
+
+    <h2 class="section-title">Research</h2>
+    <div class="section-line"></div>
+
+    <p class="section-intro">
+      My research combines computational and experimental approaches
+      across multiple length scales to study deformation, microstructure,
+      and effective properties of engineering materials.
+    </p>
+
+    <div class="research-grid">
+
+      <div class="research-card">
+        <h3>Crystal Plasticity & Computational Mechanics</h3>
+        <p>
+          Crystal plasticity finite element modeling of metallic materials
+          to investigate deformation mechanisms, anisotropy, slip activity,
+          grain-scale behavior, and microstructure-property relationships.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Image-Based Finite Element Modeling</h3>
+        <p>
+          Development of computational workflows that transform
+          three-dimensional μCT microstructures into finite element
+          representative volume elements for mechanical simulation.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Computational Homogenization</h3>
+        <p>
+          Prediction of effective mechanical properties of heterogeneous
+          and porous materials directly from their three-dimensional
+          microstructures.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Multiscale Modeling</h3>
+        <p>
+          Integration of atomistic, microscale, and continuum modeling
+          approaches to understand material behavior across length scales.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Atomistic Modeling</h3>
+        <p>
+          Application of density functional theory and molecular dynamics
+          simulations to investigate advanced functional and
+          energy-storage materials.
+        </p>
+      </div>
+
+      <div class="research-card">
+        <h3>Scientific Computing</h3>
+        <p>
+          Development of Python, MATLAB, Fortran, and C/C++ computational
+          workflows for simulation automation, data processing, and
+          materials modeling.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PUBLICATIONS -->
+
+<section id="publications">
+
+  <div class="container">
+
+    <h2 class="section-title">Selected Publications</h2>
+    <div class="section-line"></div>
+
+    <div class="publication">
+      <h3>
+        Deformation of Quenched and Tempered Low-Carbon Steel:
+        Part I — Quasi-Static Behavior
+      </h3>
+      <p>
+        J. Wanni, C. Adkins, R. Rasmussen,
+        <strong>M. K. Kareem</strong>, et al. (2026)
+        · <span class="journal">Metallurgical and Materials Transactions A</span>
+      </p>
+    </div>
+
+    <div class="publication">
+      <h3>
+        Chaos and Dynamic Instabilities of FGM Micro-Pipes with
+        Internal Fluid Flow via Strain Gradient Theory
+      </h3>
+      <p>
+        N. Alfryyan et al., <strong>M. K. Kareem</strong>, et al. (2026)
+        · <span class="journal">Scientific Reports</span>
+      </p>
+    </div>
+
+    <div class="publication">
+      <h3>
+        Molecular Dynamics Investigation of Structural and Thermophysical
+        Properties of Capric Acid–Silica Nanocomposites
+      </h3>
+      <p>
+        N. S. S. Singh et al., <strong>M. K. Kareem</strong>, et al. (2026)
+        · <span class="journal">Chemical Engineering Journal Advances</span>
+      </p>
+    </div>
+
+    <div class="publication">
+      <h3>
+        First-Principles and Molecular Dynamics Insights into
+        CrTe₂/h-BN van der Waals Heterostructures
+      </h3>
+      <p>
+        N. P. Yadav et al., <strong>M. K. Kareem</strong>, et al. (2026)
+        · <span class="journal">Journal of Energy Storage</span>
+      </p>
+    </div>
+
+    <div class="publication">
+      <h3>
+        Machine Learning–Guided Optimization and Design of Bilayer
+        Composite Absorbers
+      </h3>
+      <p>
+        H. Yang, <strong>M. K. Kareem</strong>, et al. (2026)
+        · <span class="journal">Chinese Journal of Physics</span>
+      </p>
+    </div>
+
+    <br>
+
+    <a class="button button-primary"
+       href="https://scholar.google.com/citations?user=R8xlv-8AAAAJ&hl=en"
+       target="_blank">
+       View All Publications on Google Scholar
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+  <div class="container">
+
+    <h2 class="section-title">Experience</h2>
+    <div class="section-line"></div>
+
+    <div class="experience-card">
+
+      <h3>Graduate Teaching Assistant</h3>
+      <h4>University of New Hampshire | 2024 – Present</h4>
+
+      <p>
+        Supporting undergraduate engineering education in materials science,
+        engineering mechanics, design, CAD, laboratory activities, and
+        technical problem solving.
+      </p>
+
+    </div>
+
+    <div class="experience-card">
+
+      <h3>Engineering Manager</h3>
+      <h4>Iraqi Ministry of Electricity | 2010 – 2023</h4>
+
+      <p>
+        Managed engineering operations, quality assurance, maintenance,
+        materials testing, infrastructure projects, and multidisciplinary
+        engineering teams.
+      </p>
+
+    </div>
+
+    <div class="experience-card">
+
+      <h3>Graduate Teaching Assistant</h3>
+      <h4>Rutgers University | 2016 – 2017</h4>
+
+      <p>
+        Assisted instruction in solid mechanics, mechatronics,
+        aerospace engineering, laboratory work, and engineering analysis.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+  <div class="container">
+
+    <h2 class="section-title">Education</h2>
+    <div class="section-line"></div>
+
+    <div class="timeline-item">
+
+      <h3>Ph.D. in Mechanical Engineering</h3>
+
+      <h4>
+        University of New Hampshire · 2024 – Present
+      </h4>
+
+      <p>
+        Research focus: Computational Mechanics, Crystal Plasticity,
+        Image-Based Finite Element Modeling, Multiscale Modeling,
+        and Computational Materials Science.
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <h3>M.S. in Mechanical Engineering</h3>
+
+      <h4>
+        Rutgers, The State University of New Jersey · 2014 – 2018
+      </h4>
+
+      <p>
+        Thesis: Mechanical Characterization of Thin-Film Oligomeric
+        Silsesquioxane Polymer Coatings on Silicon Using Nanoindentation.
+      </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+      <h3>B.S. in Mechanical Engineering</h3>
+
+      <h4>
+        Al-Furat Al-Awsat Technical University · 2004 – 2008
+      </h4>
+
+      <p>
+        Automobile Engineering.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="container">
+
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+
+    <p>
+      I welcome opportunities for research collaboration and academic
+      discussions in computational mechanics, advanced materials,
+      finite element modeling, and computational materials science.
+    </p>
+
+    <div class="contact-links">
+
+      <a href="mailto:mkk99@rutgers.edu">
+        Email
+      </a>
+
+      <a href="https://scholar.google.com/citations?user=R8xlv-8AAAAJ&hl=en"
+         target="_blank">
+        Google Scholar
+      </a>
+
+      <a href="https://www.linkedin.com/in/muthanna-kareem-99867b71/"
+         target="_blank">
+        LinkedIn
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  © 2026 Muthanna K. Kareem · Academic Website
+
+</footer>
+
 
 </body>
 </html>
